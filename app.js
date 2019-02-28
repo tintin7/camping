@@ -16,7 +16,7 @@ var commentsRoutes = require("./routes/comment.js");
 var authRoutes = require("./routes/auth.js");
 
 var app = express();
-mongoose.connect("mongodb://localhost/yelp4",{ useNewUrlParser: true });
+mongoose.connect("mongodb://localhost/yelp5",{ useNewUrlParser: true });
 app.use(bodyparser.urlencoded({extended:true}));
 //seedDB();
 app.use(methodOverride("_method"));
