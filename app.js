@@ -16,7 +16,9 @@ var commentsRoutes = require("./routes/comment.js");
 var authRoutes = require("./routes/auth.js");
 
 var app = express();
-mongoose.connect("mongodb://localhost/yelp5",{ useNewUrlParser: true });
+mongoose.connect("mongodb+srv://tarun:tarun123@yelpcamp5-9zqd9.mongodb.net/test?retryWrites=true",{ useNewUrlParser: true });
+//mongodb+srv://tarun:<PASSWORD>@cluster0-0xjzs.mongodb.net/test?retryWrites=true
+//mongo "mongodb+srv://cluster0-0xjzs.mongodb.net/test" --username tarun
 app.use(bodyparser.urlencoded({extended:true}));
 //seedDB();
 app.use(methodOverride("_method"));
@@ -45,6 +47,10 @@ app.use(function(req,res,next){
 app.use(campgroundRoutes);
 app.use(commentsRoutes);
 app.use(authRoutes);
+
+// app.listen(3000,"0.0.0.0",function(){
+// 	console.log("yelp camp server started!");
+// });
 
 app.listen(process.env.PORT,process.env.IP,function(){
 	console.log("yelp camp server started!");
