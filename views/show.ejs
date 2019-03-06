@@ -1,7 +1,29 @@
 <% include partials/header.ejs %>
-<h1><%= campground.name %></h1>
-<img src="<%= campground.image %>">
-<p><%= campground.description %></p>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<p class="lead">campgrounds</p>
+			<div class="list-group">
+				<li class="list-group-item active">Info 1</li>
+				<li class="list-group-item">Info 2</li>
+				<li class="list-group-item">Info 3</li>
+			</div>
+		</div>
+		<div class="col-md-9">
+			<div class="thumbnail">
+				<img class="img-responsive" src="<%= campground.image %>">
+				<div class="caption-full">
+					<h4 class="pull-right">9.00$/night</h4>
+					<h4><a><h1><%= campground.name %></h1></a></h4>
+					<p><%= campground.description %></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
 <em><p>Created by <%= campground.author.username %></p></em>
 
 <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
