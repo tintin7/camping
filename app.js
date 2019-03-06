@@ -23,6 +23,7 @@ app.use(bodyparser.urlencoded({extended:true}));
 //seedDB();
 app.use(methodOverride("_method"));
 app.use(flash());
+app.use(express.static(__dirname + "/public"));
 
 app.use(require("express-session")({
 	secret:"msd is the best",
